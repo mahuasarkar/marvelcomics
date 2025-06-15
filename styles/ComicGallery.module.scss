@@ -54,7 +54,6 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    cursor: pointer;
 
     &Image {
       width: 285px;
@@ -106,4 +105,71 @@
     }
 
   }
+}
+
+.loading {
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 10rem 0 70rem 0;
+  margin: auto;
+  color: vars.$white;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem;
+
+  .dots span {
+    animation: blink 1.5s infinite;
+    font-size: 2rem;
+    line-height: 0;
+  }
+
+  .dots span:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+
+  .dots span:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+}
+
+@keyframes blink {
+  0%   { opacity: 0.2; }
+  20%  { opacity: 1; }
+  100% { opacity: 0.2; }
+}
+
+.filterContainer {
+  margin: 40px 89px;
+  display: flex;
+  justify-content: flex-end;
+  
+  .filterDropdown {
+    padding: 10px 20px;
+    border-radius: 8px;
+    background-color: vars.$marvel-red;
+    color: vars.$white;
+    font-family: vars.$font-roboto;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      background-color: darken(vars.$marvel-red, 10%);
+    }
+    
+    option {
+      background-color: vars.$black;
+    }
+  }
+}
+
+.noResults {
+  text-align: center;
+  padding: 100px 0;
+  font-family: vars.$font-roboto;
+  font-size: 24px;
+  color: vars.$white;
 }

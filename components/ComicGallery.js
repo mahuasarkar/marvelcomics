@@ -62,22 +62,32 @@ const ComicGallery = () => {
         <section className={styles.comicGallery}>
           <div className={styles.redLine}></div>
 
-          {comics.length > 0 ? (
-            <>
-              <div className={styles.row}>
-                {comics.slice(0, 4).map((comic) => (
-                  <ComicCard key={comic.id} comic={comic} />
-                ))}
+          {loading ? (
+              <div className={styles.loading}>
+                <span>Loading comics</span>
+                <span className={styles.dots}>
+                  <span>.</span>
+                  <span>.</span>
+                  <span>.</span>
+                </span>
               </div>
-              <div className={styles.row}>
-                {comics.slice(4, 8).map((comic) => (
-                  <ComicCard key={comic.id} comic={comic} />
-                ))}
-              </div>
-            </>
-          ) : (
-            <div className={styles.noResults}>No comics found for the selected filter.</div> //need a loader here until data is loaded, if not then only show no data
-          )}
+            ) : comics.length > 0 ? (
+              <>
+                <div className={styles.row}>
+                  {comics.slice(0, 4).map((comic) => (
+                    <ComicCard key={comic.id} comic={comic} />
+                  ))}
+                </div>
+                <div className={styles.row}>
+                  {comics.slice(4, 8).map((comic) => (
+                    <ComicCard key={comic.id} comic={comic} />
+                  ))}
+                </div>
+              </>
+            ) : (
+              <div className={styles.noResults}>No comics found for the selected filter.</div>
+            )}
+
         </section>
       </div>
     </div>
