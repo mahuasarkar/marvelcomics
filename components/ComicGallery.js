@@ -35,65 +35,85 @@ const ComicGallery = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
-    let selectedCharacter = `name%3ASpider-Man`;
-    const fetchComics = async () => {
-      try {
-        setLoading(true);
-        const response = await fetch(`/api/fetchcomics?character=${selectedCharacter}`);
-        const data = await response.json();
-        setComics(data || []);
-        setLoading(false);
-      } catch (err) {
-        setError(err.message);
-        setLoading(false);
-      }
-    };
+  const fetchComics = async (villain = '') => {
+    try {
+      setLoading(true);
 
-    fetchComics();
+      let characterQuery = `name%3ASpider-Man`;
+      if (villain) {
+        characterQuery = `name%3A${encodeURIComponent(villain)}`;
+      }
+
+      const response = await fetch(`/api/fetchcomics?character=${characterQuery}`);
+      const data = await response.json();
+      setComics(data || []);
+      setLoading(false);
+    } catch (err) {
+      setError(err.message);
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchComics(selectedVillain);
   }, [selectedVillain]);
 
   if (error) return <div className={styles.loading}>Error: {error}</div>;
 
   return (
     <div>
+      <div className={styles.filterContainer}>
+        <select 
+          value={selectedVillain} 
+          onChange={(e) => setSelectedVillain(e.target.value)} 
+          className={styles.filterDropdown}
+        >
+          <option value="">All Villains</option>
+          <option value="Doctor Octopus">Doctor Octopus</option>
+          <option value="Carnage">Carnage</option>
+          <option value="Chameleon">Chameleon</option>
+          <option value="Electro">Electro</option>
+          <option value="Green Goblin">Green Goblin</option>
+          <option value="Hobgoblin">Hobgoblin</option>
+          <option value="Kraven the Hunter">Kraven the Hunter</option>
+          <option value="Venom">Venom</option>
+          <option value="Shocker">Shocker</option>
+        </select>
+      </div>
 
       <div className={styles.comicGallerySection}>
         <section className={styles.comicGallery}>
           <div className={styles.redLine}></div>
 
           {loading ? (
-              <div>
-                <section>
-                  <div className={styles.row}>
-                    {Array.from({ length: 4 }).map((_, index) => (
-                      <div key={`row1-${index}`} className={styles.skeletonCard}></div>
-                    ))}
-                  </div>
-                  <div className={styles.row}>
-                    {Array.from({ length: 4 }).map((_, index) => (
-                      <div key={`row2-${index}`} className={styles.skeletonCard}></div>
-                    ))}
-                  </div>
-                </section>
+            <>
+              <div className={styles.row}>
+                {Array.from({ length: 4 }).map((_, index) => (
+                  <div key={`skeleton1-${index}`} className={styles.skeletonCard}></div>
+                ))}
               </div>
-            ) : comics.length > 0 ? (
-              <>
-                <div className={styles.row}>
-                  {comics.slice(0, 4).map((comic) => (
-                    <ComicCard key={comic.id} comic={comic} />
-                  ))}
-                </div>
-                <div className={styles.row}>
-                  {comics.slice(4, 8).map((comic) => (
-                    <ComicCard key={comic.id} comic={comic} />
-                  ))}
-                </div>
-              </>
-            ) : (
-              <div className={styles.noResults}>No comics found for the selected filter.</div>
-            )}
-
+              <div className={styles.row}>
+                {Array.from({ length: 4 }).map((_, index) => (
+                  <div key={`skeleton2-${index}`} className={styles.skeletonCard}></div>
+                ))}
+              </div>
+            </>
+          ) : comics.length > 0 ? (
+            <>
+              <div className={styles.row}>
+                {comics.slice(0, 4).map((comic) => (
+                  <ComicCard key={comic.id} comic={comic} />
+                ))}
+              </div>
+              <div className={styles.row}>
+                {comics.slice(4, 8).map((comic) => (
+                  <ComicCard key={comic.id} comic={comic} />
+                ))}
+              </div>
+            </>
+          ) : (
+            <div className={styles.noResults}>No comics found for the selected filter.</div>
+          )}
         </section>
       </div>
     </div>
