@@ -246,7 +246,7 @@ As per the assignment instructions:
 
 1. **Homepage Development**
    - Built using **Next.js**, **React (JSX)**, and **SCSS**
-   - Based on the provided Figma design: `'design'`
+   - Based on the provided Figma design
 
 2. **See Marvel Heroes Section**
    - Implemented functionality where clicking a Marvel Hero opens a modal
