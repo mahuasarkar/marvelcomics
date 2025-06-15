@@ -41,7 +41,7 @@ const ComicGallery = () => {
 
       let characterQuery = `name%3ASpider-Man`;
       if (villain) {
-        characterQuery = `name%3A${encodeURIComponent(villain)}`;
+        characterQuery = `name:${encodeURIComponent(villain)}`;
       }
 
       const response = await fetch(`/api/fetchcomics?character=${characterQuery}`);
@@ -62,28 +62,36 @@ const ComicGallery = () => {
 
   return (
     <div>
-      <div className={styles.filterContainer}>
-        <select 
-          value={selectedVillain} 
-          onChange={(e) => setSelectedVillain(e.target.value)} 
-          className={styles.filterDropdown}
-        >
-          <option value="">All Villains</option>
-          <option value="Doctor Octopus">Doctor Octopus</option>
-          <option value="Carnage">Carnage</option>
-          <option value="Chameleon">Chameleon</option>
-          <option value="Electro">Electro</option>
-          <option value="Green Goblin">Green Goblin</option>
-          <option value="Hobgoblin">Hobgoblin</option>
-          <option value="Kraven the Hunter">Kraven the Hunter</option>
-          <option value="Venom">Venom</option>
-          <option value="Shocker">Shocker</option>
-        </select>
-      </div>
 
       <div className={styles.comicGallerySection}>
+
         <section className={styles.comicGallery}>
           <div className={styles.redLine}></div>
+
+          <div>
+              <div className={styles.filterContainer}>
+                <select 
+                  value={selectedVillain} 
+                  onChange={(e) => setSelectedVillain(e.target.value)} 
+                  className={styles.filterDropdown}
+                >
+                  <option value="">All Villains</option>
+                  <option value="Doctor Octopus">Doctor Octopus</option>
+                  <option value="Carnage">Carnage</option>
+                  <option value="Chameleon">Chameleon</option>
+                  <option value="Electro">Electro</option>
+                  <option value="Green Goblin">Green Goblin</option>
+                  <option value="Hobgoblin">Hobgoblin</option>
+                  <option value="Kraven the Hunter">Kraven the Hunter</option>
+                  <option value="Venom">Venom</option>
+                  <option value="Shocker">Shocker</option>
+                </select>
+                
+              </div>
+
+            <div className={styles.dropdownnote}>Note: In case no comics found, check once again due to comicvine `API error`.</div>
+          </div>
+         
 
           {loading ? (
             <>

@@ -133,35 +133,20 @@
 }
 
 .filterContainer {
-  margin: 40px 89px;
-  display: flex;
-  justify-content: flex-end;
-  
-  .filterDropdown {
-    padding: 10px 20px;
-    border-radius: 8px;
-    background-color: vars.$marvel-red;
-    color: vars.$white;
-    font-family: vars.$font-roboto;
-    font-size: 18px;
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    
-    &:hover {
-      background-color: darken(vars.$marvel-red, 10%);
-    }
-    
-    option {
-      background-color: vars.$black;
-    }
+  position: -webkit-sticky;
+  position: sticky;
+  top: 20px;
+  background: #030303;
+  padding: 2rem 0 0 0;
+  z-index: 100;
+  margin: 0 89px;
+  select {
+    font-size: 20px;
+    padding: 6px 10px;
   }
 }
 
-.noResults {
-  text-align: center;
-  padding: 100px 0;
-  font-family: vars.$font-roboto;
-  font-size: 24px;
+.dropdownnote {
   color: vars.$white;
+  margin: 8px 89px;
 }
