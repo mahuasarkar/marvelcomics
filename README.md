@@ -237,3 +237,34 @@ Include any additional environment variables or deployment steps as needed, depe
    - No dropdown UI shown in design.
    - Assumed to be positioned above the comic section (under the banner).
 
+
+---
+
+## 📄 Assignment Summary
+
+As per the assignment instructions:
+
+1. **Homepage Development**
+   - Built using **Next.js**, **React (JSX)**, and **SCSS**
+   - Based on the provided Figma design: `'design'`
+
+2. **See Marvel Heroes Section**
+   - Implemented functionality where clicking a Marvel Hero opens a modal
+   - Modal displays comprehensive character details
+
+3. **Comic Section (In place of Movie section)**
+   - Used **ComicVine API**, **ACF**, and **GraphQL**
+   - Developed a list of comics featuring **Spider-Man (Peter Parker)** whose series began exclusively in **2022**
+
+4. **Villain Dropdown Filter**
+   - Created dropdown using **ACF** and **GraphQL**
+   - Villains added:  
+     `Doctor Octopus, Carnage, Chameleon, Electro, Green Goblin, Hobgoblin, Kraven the Hunter, Venom, Shocker`
+
+5. **GraphQL Integration for Filtering**
+   - Intended to connect dropdown with GraphQL to filter comics by selected villain
+
+> ✅ All core functionalities have been implemented as per the assignment  
+> ⚠️ The only pending item is the **final GraphQL filtering** connection due to ComicVine API limitations.  
+> This is documented in the README. All other tasks are completed.
+
