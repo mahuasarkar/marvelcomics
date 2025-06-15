@@ -9,29 +9,29 @@ const HeroSection = () => {
   const cards = [
     {
       id: 1,
-      title: "Thor",
-      name: "Chris Hemsworth",
-      year: "1983",
-      image: "/images/herosection/thor.jpg",
+      title: "Iron Man",
+      name: "Robert Downey Jr.",
+      year: "1965",
+      image: "/images/herosection/ironman.jpg",
       details: {
-        bio: "Thor is the God of Thunder, a founding member of the Avengers...",
-        movies: ["Thor", "Avengers", "Thor: Ragnarok"],
-        powers: ["Superhuman strength", "Weather manipulation", "Longevity"]
+        bio: "Iron Man, aka Tony Stark, is a genius billionaire who created a powerful suit of armor to fight injustice.",
+        movies: ["Iron Man", "Avengers", "Civil War"],
+        powers: ["Powered armor suit", "Genius intellect", "Energy blasts"]
       }
     },
     {
       id: 2,
-      title: "Thor",
-      name: "Chris Hemsworth",
-      year: "1983",
-      image: "/images/herosection/thor.jpg",
+      title: "Scarlet Witch",
+      name: "Elizabeth Olsen",
+      year: "1989",
+      image: "/images/herosection/wasp.jpg",
       details: {
-        bio: "Thor is the God of Thunder, a founding member of the Avengers...",
-        movies: ["Thor", "Avengers", "Thor: Ragnarok"],
-        powers: ["Superhuman strength", "Weather manipulation", "Longevity"]
+        bio: "Scarlet Witch, also known as Wanda Maximoff, wields chaos magic and can alter reality itself.",
+        movies: ["Avengers: Age of Ultron", "WandaVision", "Doctor Strange 2"],
+        powers: ["Reality warping", "Telekinesis", "Energy manipulation"]
       }
     },
-     {
+    {
       id: 3,
       title: "Thor",
       name: "Chris Hemsworth",
@@ -45,62 +45,62 @@ const HeroSection = () => {
     },
     {
       id: 4,
-      title: "Thor",
-      name: "Chris Hemsworth",
-      year: "1983",
-      image: "/images/herosection/thor.jpg",
+      title: "Hulk",
+      name: "Mark Ruffalo",
+      year: "1967",
+      image: "/images/herosection/hulk.jpg",
       details: {
-        bio: "Thor is the God of Thunder, a founding member of the Avengers...",
-        movies: ["Thor", "Avengers", "Thor: Ragnarok"],
-        powers: ["Superhuman strength", "Weather manipulation", "Longevity"]
+        bio: "Hulk, the alter ego of Bruce Banner, is a brilliant scientist who transforms into a powerful green giant when enraged.",
+        movies: ["The Incredible Hulk", "Avengers", "Thor: Ragnarok"],
+        powers: ["Superhuman strength", "Regeneration", "Durability"]
       }
     },
     {
       id: 5,
-      title: "Thor",
-      name: "Chris Hemsworth",
-      year: "1983",
-      image: "/images/herosection/thor.jpg",
+      title: "Captain Marvel",
+      name: "Brie Larson",
+      year: "1989",
+      image: "/images/herosection/gamora.jpg",
       details: {
-        bio: "Thor is the God of Thunder, a founding member of the Avengers...",
-        movies: ["Thor", "Avengers", "Thor: Ragnarok"],
-        powers: ["Superhuman strength", "Weather manipulation", "Longevity"]
+        bio: "Captain Marvel, aka Carol Danvers, is a former Air Force pilot with cosmic powers granted by the Tesseract.",
+        movies: ["Captain Marvel", "Avengers: Endgame", "The Marvels"],
+        powers: ["Energy absorption", "Flight", "Superhuman strength"]
       }
     },
     {
       id: 6,
-      title: "Thor",
-      name: "Chris Hemsworth",
-      year: "1983",
-      image: "/images/herosection/thor.jpg",
+      title: "Gamora",
+      name: "Zoe Saldana",
+      year: "1978",
+      image: "/images/herosection/gamora.jpg",
       details: {
-        bio: "Thor is the God of Thunder, a founding member of the Avengers...",
-        movies: ["Thor", "Avengers", "Thor: Ragnarok"],
-        powers: ["Superhuman strength", "Weather manipulation", "Longevity"]
+        bio: "Gamora is the adopted daughter of Thanos and a member of the Guardians of the Galaxy, known for her combat skills and agility.",
+        movies: ["Guardians of the Galaxy", "Avengers: Infinity War", "Endgame"],
+        powers: ["Expert combatant", "Agility", "Healing"],
       }
     },
     {
       id: 7,
-      title: "Thor",
-      name: "Chris Hemsworth",
-      year: "1983",
-      image: "/images/herosection/thor.jpg",
+      title: "Wasp",
+      name: "Evangeline Lilly",
+      year: "1979",
+      image: "/images/herosection/wasp.jpg",
       details: {
-        bio: "Thor is the God of Thunder, a founding member of the Avengers...",
-        movies: ["Thor", "Avengers", "Thor: Ragnarok"],
-        powers: ["Superhuman strength", "Weather manipulation", "Longevity"]
+        bio: "Wasp, aka Hope van Dyne, is a skilled fighter and scientist who uses a suit that allows her to shrink and fly.",
+        movies: ["Ant-Man", "Ant-Man and the Wasp", "Endgame"],
+        powers: ["Size manipulation", "Flight", "Energy blasts"]
       }
     },
     {
       id: 8,
-      title: "Thor",
-      name: "Chris Hemsworth",
-      year: "1983",
-      image: "/images/herosection/thor.jpg",
+      title: "Spider-Man",
+      name: "Tom Holland",
+      year: "1996",
+      image: "/images/herosection/ironman.jpg",
       details: {
-        bio: "Thor is the God of Thunder, a founding member of the Avengers...",
-        movies: ["Thor", "Avengers", "Thor: Ragnarok"],
-        powers: ["Superhuman strength", "Weather manipulation", "Longevity"]
+        bio: "Spider-Man, aka Peter Parker, is a young hero gifted with spider-like abilities after a radioactive spider bite.",
+        movies: ["Spider-Man: Homecoming", "Avengers: Endgame", "No Way Home"],
+        powers: ["Wall-crawling", "Spider-sense", "Super agility"]
       }
     }
   ];
