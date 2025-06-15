@@ -28,6 +28,7 @@
     height: 100%;
     display: flex;
     flex-direction: column;
+    cursor: pointer;
 
     &Image {
       width: 285px;
@@ -40,15 +41,13 @@
         object-fit: cover;
         transition: transform 0.3s ease;
       }
-
-      &:hover img {
-        transform: scale(1.05);
-      }
+      
     }
 
     &Details {
       display: flex;
       align-items: flex-start;
+      justify-content: space-between;
       gap: 10px;
     }
 
@@ -75,8 +74,19 @@
       font-weight: 400;
       font-size: 22px;
       letter-spacing: 0;
-      margin: 24px 0 10px;
+      margin: 26px 0 10px;
       color: vars.$marvel-red;
     }
+    
+    &:hover {
+      img {
+        transform: scale(1.05);
+      }
+      .cardDetails .cardTitle {
+        text-decoration: underline;
+        color: vars.$white;
+      }
+    }
+    
   }
 }

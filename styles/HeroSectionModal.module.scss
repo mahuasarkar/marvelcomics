@@ -1,0 +1,119 @@
+@use '../styles/variable' as vars;
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background-color: vars.$marvel-dark;
+  border-radius: 8px;
+  max-width: 800px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  padding: 40px;
+  border: 2px solid vars.$marvel-red;
+}
+
+.closeButton {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  color: vars.$white;
+  font-size: 30px;
+  cursor: pointer;
+  transition: color 0.3s;
+
+  &:hover {
+    color: vars.$marvel-red;
+  }
+}
+
+.modalContent {
+  display: flex;
+  gap: 30px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+.modalImage {
+  width: 300px;
+  height: 400px;
+  flex-shrink: 0;
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 300px;
+  }
+}
+
+.modalDetails {
+  color: vars.$white;
+  font-family: vars.$font-roboto;
+
+  h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: vars.$marvel-red;
+  }
+
+  h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .bio {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+  }
+}
+
+.detailsSection {
+  margin-bottom: 20px;
+
+  h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: vars.$marvel-red;
+  }
+
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+
+    li {
+      margin-bottom: 8px;
+      position: relative;
+      padding-left: 20px;
+
+      &::before {
+        content: "•";
+        color: vars.$marvel-red;
+        position: absolute;
+        left: 0;
+      }
+    }
+  }
+}
