@@ -1,0 +1,14 @@
+@use '../styles/variable' as vars;
+
+.container {
+  max-width: 1512px;
+  margin: auto;
+  background-color: vars.$marvel-dark;
+  border-radius: 50px;
+}
+.content {
+  background-image: url('../public/images/spiderman-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  border-radius: 50px;
+}

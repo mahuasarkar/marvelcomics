@@ -1,0 +1,105 @@
+@use '../styles/variable' as vars;
+
+.button {
+  width: 180px;
+  height: 60px;
+  border-radius: 8px;
+  padding: 16px 32px;
+  background-color: vars.$marvel-red;
+  color: vars.$white;
+  font-family: vars.$font-roboto;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 100%;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 0 89px;
+
+  &:hover {
+    background-color: darken(vars.$marvel-red, 10%);
+    transform: translateY(-2px);
+  }
+}
+
+.comicGallerySection {
+  width: 100%;
+  height: 1306px;
+  margin: 0 auto;
+  position: relative;
+  background: linear-gradient(180.16deg, rgba(3, 3, 3, 0) 0.14%, #030303 20.56%);
+
+  .comicGallery {
+    padding-top: 525px;
+  }
+
+  .redLine {
+    margin: 0 89px;
+    width: 100%;
+    height: 6px;
+    border-radius: 5px;
+    background: linear-gradient(90deg, #F0141E 41.9%, rgba(240, 20, 30, 0) 97.68%);
+  }
+
+  .row {
+    width: 100%;
+    height: 468px;
+    display: flex;
+    gap: 65px;
+    margin-bottom: 65px;
+    position: relative;
+    top: 118px; // 1392px - 1274px (from red line)
+    left: 89px;
+  }
+
+  .card {
+    width: 285px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    &Image {
+      width: 285px;
+      height: 350px;
+      overflow: hidden;
+      border-radius: 8px;
+      
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+
+      &:hover img {
+        transform: scale(1.05);
+      }
+    }
+
+    &Title {
+      font-family: vars.$font-roboto;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 100%;
+      margin: 20px 0 10px;
+      color: vars.$white;
+    }
+
+    &Details {
+      width: 235px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: vars.$font-roboto;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 100%;
+      color: vars.$white;
+
+      .separator {
+        opacity: 0.5;
+      }
+    }
+  }
+}

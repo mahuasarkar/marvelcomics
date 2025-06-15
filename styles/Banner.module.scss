@@ -1,0 +1,38 @@
+@use '../styles/variable' as vars;
+
+.banner {
+  position: relative;
+  height: 195px;
+  width: 100%;
+  margin-top: -184px;
+  padding-top: 184px;
+  margin-bottom: 485px;
+  z-index: 1;
+
+  .content {
+    padding: 0 89px;
+    position: relative;
+    top: 211px;
+  }
+
+  .title {
+    font-family: 'Rozha One', serif;
+    font-weight: 400;
+    font-size: 100px;
+    line-height: 100%;
+    color: vars.$white;
+    margin-bottom: 54px;
+    letter-spacing: 0;
+  }
+
+  .subtitle {
+    font-family: vars.$font-roboto;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 100%;
+    color: vars.$white;
+    max-width: 997px;
+    margin-bottom: 40px;
+  }
+
+}

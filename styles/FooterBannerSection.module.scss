@@ -1,0 +1,79 @@
+@use '../styles/variable' as vars;
+
+.footerBanner {
+  width: 100%;
+  position: relative;
+
+  .bannerContainer {
+    display: flex;
+    width: 100%;
+  }
+
+  .bannerImage {
+    width: 50%;
+    height: auto;
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .bannerContent {
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    text-align: center;
+  }
+
+  .insiderTitle {
+    font-family: vars.$font-roboto;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 100%;
+    color: vars.$marvel-red;
+    margin-bottom: 30px;
+  }
+
+  .insiderSubtitle {
+    font-family: vars.$font-roboto;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 100%;
+    color: vars.$white;
+    margin-bottom: 25px;
+  }
+
+  .insiderText {
+    font-family: vars.$font-roboto;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 100%;
+    color: vars.$white;
+    margin-bottom: 50px;
+  }
+
+  .joinButton {
+    background: vars.$marvel-red;
+    border-radius: 8px;
+    border: none;
+    color: vars.$white;
+    font-family: vars.$font-roboto;
+    font-weight: 400;
+    font-size: 24px;
+    padding: 16px 32px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: darken(vars.$marvel-red, 10%);
+      transform: translateY(-2px);
+    }
+  }
+
+}
+

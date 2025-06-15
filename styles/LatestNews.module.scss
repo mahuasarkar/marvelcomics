@@ -1,0 +1,59 @@
+@use '../styles/variable' as vars;
+
+.latestNews {
+  width: 100%;
+  height: 569px;
+  color: vars.$white;
+  margin: 100px 89px;
+  // margin-bottom: 100px;
+
+  .sectionTitle {
+    font-family: vars.$font-roboto;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 100%;
+    padding-bottom: 40px;
+  }
+
+  .newsColumns {
+    display: flex;
+    gap: 129px;
+  }
+
+  .newsColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .newsCard {
+    width: 606px;
+    height: 126px;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .newsImage {
+    width: 215px;
+    height: 126px;
+    flex-shrink: 0;
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+  }
+
+  .newsTitle {
+    font-family: vars.$font-roboto;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 1.2em;
+    margin: 0;
+  }
+
+}
+
