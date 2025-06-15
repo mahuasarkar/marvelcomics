@@ -63,13 +63,19 @@ const ComicGallery = () => {
           <div className={styles.redLine}></div>
 
           {loading ? (
-              <div className={styles.loading}>
-                <span>Loading comics</span>
-                <span className={styles.dots}>
-                  <span>.</span>
-                  <span>.</span>
-                  <span>.</span>
-                </span>
+              <div>
+                <section>
+                  <div className={styles.row}>
+                    {Array.from({ length: 4 }).map((_, index) => (
+                      <div key={`row1-${index}`} className={styles.skeletonCard}></div>
+                    ))}
+                  </div>
+                  <div className={styles.row}>
+                    {Array.from({ length: 4 }).map((_, index) => (
+                      <div key={`row2-${index}`} className={styles.skeletonCard}></div>
+                    ))}
+                  </div>
+                </section>
               </div>
             ) : comics.length > 0 ? (
               <>
