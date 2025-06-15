@@ -1,40 +1,239 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
 
-## Getting Started
+# 🚀 Marvel Comics Web App
 
-First, run the development server:
+A lightweight Next.js-based application to showcase Marvel characters and comics using the ComicVine API.
+
+---
+
+## 🔧 Basic Startup (Quick Start)
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/mahuasarkar/marvelcomics.git
+   cd marvelcomics
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Run the app locally**
+   ```bash
+   npm run dev
+   ```
+
+4. **Open in browser**
+   ```
+   http://localhost:3000
+   ```
+
+> ℹ️ Make sure you have the correct versions of Node.js (v22.16.0) and npm (v10.5.2). If not, see detailed instructions below.
+
+---
+
+## 📚 Full Setup Guide
+
+### ✅ Prerequisites
+
+1. **Visual Studio Code**
+   - Download: https://code.visualstudio.com
+
+2. **Node.js (v22.16.0) & npm (v10.5.2)**
+   - Check installed versions:
+     ```bash
+     node -v
+     npm -v
+     ```
+   - If not installed: https://nodejs.org/en
+   - If wrong version:
+     - **Windows**: https://github.com/coreybutler/nvm-windows/releases
+     - **macOS/Linux**:
+       ```bash
+       curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+       nvm install 22.16.0
+       nvm use 22.16.0
+       npm install -g npm@10.5.2
+       ```
+
+---
+
+### ⚙️ Project Setup
+
+1. **Create Next.js App**
+   ```bash
+   npx create-next-app@latest
+   ```
+
+   > Choose:
+   - TypeScript: No
+   - ESLint: Yes
+   - Tailwind: No
+   - `src/` dir: No
+   - App Router: No
+   - Turbopack: No
+   - Custom Alias: No
+
+2. **Navigate to project**
+   ```bash
+   cd marvelcomics
+   ```
+
+3. **Install SCSS**
+   ```bash
+   npm install sass
+   npm list sass
+   ```
+
+4. **Install essential packages**
+   ```bash
+   npm install next react react-dom
+   ```
+
+5. **Add scripts to `package.json`**
+   ```json
+   "scripts": {
+     "dev": "next dev",
+     "build": "next build",
+     "start": "next start"
+   }
+   ```
+
+6. **Run App**
+   ```bash
+   npm run dev
+   ```
+
+---
+
+### 📦 Additional Packages
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install @fontsource/roboto @fontsource/rozha-one
+npm install @apollo/client graphql
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## 🔌 ComicVine API
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+- API Key: 52273998fec94ff32bf5468b50e168a9ada75837
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+**Sample cURL**
+```bash
+curl --location --request GET 'https://comicvine.gamespot.com/api/volumes/?api_key=APIKEY' \
+--header 'Accept: application/json' \
+--header 'User-Agent: YourAppName/1.0' \
+--header 'Content-Type: application/x-www-form-urlencoded' \
+--data-urlencode 'api_key=YOUR_API_KEY' \
+--data-urlencode 'format=json'
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### API Notes
 
-## Learn More
+- `start_year` filter unreliable
+- Name search like "spiderman" works
+- Publisher ID filter fails
+- Max limit is 100, use pagination
+- Occasionally API errors may occur
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+## 🔧 GitHub Setup
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. **Install Git**
+   https://git-scm.com/downloads/win
 
-## Deploy on Vercel
+2. **Verify Git**
+   ```bash
+   git --version
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. **Configure Git**
+   ```bash
+   git config --global user.name "Your Name"
+   git config --global user.email "your@email.com"
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+4. **Initialize Repository**
+   ```bash
+   git init
+   ```
+
+5. **Add Remote**
+   ```bash
+   git remote add origin https://github.com/mahuasarkar/marvelcomics.git
+   ```
+
+6. **Stage, Commit & Push**
+   ```bash
+   git add .
+   git commit -m "Initial commit with Marvel website"
+   git branch -M main
+   git push -u origin main
+   ```
+
+> Or use GitHub Desktop: https://desktop.github.com/download/
+
+---
+
+## 📁 Suggested Structure
+
+- `/components/HeroSection.js`
+- `/components/ComicGallery.js`
+- `/graphql/queries.js`
+- `/styles/*.scss`
+
+---
+
+## 📌 Deployment Note
+
+Include any additional environment variables or deployment steps as needed, depending on your hosting provider (e.g. Vercel).
+
+---
+
+## 🧠 Project Overview & Feature Flow
+
+### 1. Homepage
+- **Stack**: React (JSX), Next.js, SCSS
+- Built based on the provided Figma UI design.
+
+### 2. See Marvel Heroes Section
+- Clicking on a hero card triggers a modal popup.
+- Modal displays detailed character info.
+
+### 3. Comic (Movie) Section
+- Data fetched from ComicVine API.
+- **Stack**: ComicVine API, ACF (WordPress), GraphQL.
+- Lists comics involving **Peter Parker**.
+- Only those series that **began exclusively in 2022** (initial load).
+
+### 4. Backend with GraphQL
+- **Stack**: ACF + WPGraphQL.
+- Villains added to backend:  
+  `Doctor Octopus, Carnage, Chameleon, Electro, Green Goblin, Hobgoblin, Kraven the Hunter, Venom, Shocker`.
+- Data stored in `srdevtest1` (external WP site).
+
+### 5. Dropdown Filter by Villain
+- A dropdown UI fetches villain list from GraphQL backend.
+- Filters comics displayed under the Comic section based on selected villain.
+
+---
+
+## 📝 Additional Notes
+
+1. **Comic Section vs. Movie Section**
+   - Assumed the "Movie Section" right below the banner is actually the **Comic Section**.
+   - Based on the ComicVine data and instructions to display **series from 2022**.
+
+2. **Initial Load Data**
+   - First load shows **only Peter Parker** comics from 2022.
+
+3. **Filtering Logic**
+   - Filtering by villain sometimes fails to return data for 2022.
+   - To improve UX, initially show Peter Parker comics; load villain-filtered data when available.
+
+4. **Dropdown Placement**
+   - No dropdown UI shown in design.
+   - Assumed to be positioned above the comic section (under the banner).
+
