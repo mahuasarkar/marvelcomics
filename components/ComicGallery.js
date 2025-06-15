@@ -7,51 +7,50 @@ const ComicGallery = () => {
       title: "Thor Love and Thunder",
       duration: "119 min",
       date: "8 JULY, 2022",
-      image: "/images/thor.jpg"
+      image: "/images/herosection/thor.jpg"
     },
     {
       title: "Black Panther Wakanda Forever",
       duration: "125 min",
       date: "11 NOV, 2022",
-      image: "/images/black-panther.jpg"
+      image: "/images/herosection/thor.jpg"
     },
     {
       title: "Thor Love and Thunder",
       duration: "119 min",
       date: "8 JULY, 2022",
-      image: "/images/thor.jpg"
+      image: "/images/herosection/thor.jpg"
     },
     {
       title: "Black Panther Wakanda Forever",
       duration: "125 min",
       date: "11 NOV, 2022",
-      image: "/images/black-panther.jpg"
+      image: "/images/herosection/thor.jpg"
     },
     {
       title: "Thor Love and Thunder",
       duration: "119 min",
       date: "8 JULY, 2022",
-      image: "/images/thor.jpg"
+      image: "/images/herosection/thor.jpg"
     },
     {
       title: "Black Panther Wakanda Forever",
       duration: "125 min",
       date: "11 NOV, 2022",
-      image: "/images/black-panther.jpg"
+      image: "/images/herosection/thor.jpg"
     },
     {
       title: "Thor Love and Thunder",
       duration: "119 min",
       date: "8 JULY, 2022",
-      image: "/images/thor.jpg"
+      image: "/images/herosection/thor.jpg"
     },
     {
       title: "Black Panther Wakanda Forever",
       duration: "125 min",
       date: "11 NOV, 2022",
-      image: "/images/black-panther.jpg"
+      image: "/images/herosection/thor.jpg"
     },
-    // Add 6 more cards following the same structure
   ];
 
   return (
@@ -67,13 +66,13 @@ const ComicGallery = () => {
                   {cards.slice(0, 4).map((card, index) => (
                   <div key={index} className={styles.card}>
                       <div className={styles.cardImage}>
-                      <img src={card.image} alt={card.title} />
+                        <img src={card.image} alt={card.title} />
                       </div>
                       <h3 className={styles.cardTitle}>{card.title}</h3>
                       <div className={styles.cardDetails}>
-                      <span>{card.duration}</span>
-                      <span className={styles.separator}>|</span>
-                      <span>{card.date}</span>
+                        <span>{card.duration}</span>
+                        <span className={styles.separator}>|</span>
+                        <span>{card.date}</span>
                       </div>
                   </div>
                   ))}

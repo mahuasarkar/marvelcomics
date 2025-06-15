@@ -13,7 +13,7 @@ export default function Home() {
       <div className={styles.content}>
         <Header />
         <Banner />
-        {/* <ComicGallery /> */}
+        <ComicGallery />
       </div>
       <HeroSection />
       <LatestNews />

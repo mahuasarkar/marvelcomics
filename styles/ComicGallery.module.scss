@@ -15,6 +15,7 @@
   cursor: pointer;
   transition: all 0.3s ease;
   margin: 0 89px;
+  position: relative;
 
   &:hover {
     background-color: darken(vars.$marvel-red, 10%);
@@ -24,7 +25,6 @@
 
 .comicGallerySection {
   width: 100%;
-  height: 1306px;
   margin: 0 auto;
   position: relative;
   background: linear-gradient(180.16deg, rgba(3, 3, 3, 0) 0.14%, #030303 20.56%);
@@ -43,26 +43,23 @@
 
   .row {
     width: 100%;
-    height: 468px;
     display: flex;
+    justify-content: center;
     gap: 65px;
-    margin-bottom: 65px;
-    position: relative;
-    top: 118px; // 1392px - 1274px (from red line)
-    left: 89px;
+    margin: 120px 0;
   }
 
   .card {
-    width: 285px;
+    max-width: 285px;
     height: 100%;
     display: flex;
     flex-direction: column;
+    cursor: pointer;
 
     &Image {
       width: 285px;
       height: 350px;
       overflow: hidden;
-      border-radius: 8px;
       
       img {
         width: 100%;
@@ -71,35 +68,42 @@
         transition: transform 0.3s ease;
       }
 
-      &:hover img {
-        transform: scale(1.05);
-      }
     }
 
     &Title {
       font-family: vars.$font-roboto;
       font-weight: 600;
       font-size: 24px;
-      line-height: 100%;
+      line-height: 1.8rem;
       margin: 20px 0 10px;
       color: vars.$white;
+      min-height: 70px;
     }
 
     &Details {
-      width: 235px;
-      height: 28px;
       display: flex;
       align-items: center;
       gap: 10px;
       font-family: vars.$font-roboto;
       font-weight: 400;
-      font-size: 24px;
+      font-size: 20px;
       line-height: 100%;
-      color: vars.$white;
+      color: #FFFFFF80;
 
       .separator {
         opacity: 0.5;
       }
     }
+
+    &:hover {
+      img {
+        transform: scale(1.05);
+      }
+      .cardTitle {
+        text-decoration: underline;
+        color: vars.$white;
+      }
+    }
+
   }
 }

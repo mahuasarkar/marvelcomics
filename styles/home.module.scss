@@ -7,8 +7,18 @@
   border-radius: 50px;
 }
 .content {
-  background-image: url('../public/images/spiderman-bg.jpg');
-  background-size: cover;
-  background-position: center;
+  position: relative;
+  overflow: hidden;
   border-radius: 50px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url(/_next/static/media/spiderman-bg.aff647b4.jpg);
+    background-size: contain;
+    background-position: center;
+    transform: translateY(-15%);
+  }
 }
+
