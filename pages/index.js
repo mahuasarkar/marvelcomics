@@ -15,7 +15,7 @@ export default function Home() {
         <Banner />
         {/* <ComicGallery /> */}
       </div>
-      {/* <HeroSection /> */}
+      <HeroSection />
       <LatestNews />
       <FooterBannerSection />
       <Footer />
