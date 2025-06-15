@@ -1,0 +1,148 @@
+Pre-requisite:
+
+1. VS code: 
+	- Go to: https://code.visualstudio.com
+	- install
+	
+2. Node:
+	- check for the node and npm version:
+		node -v
+		# Should show v22.16.0
+		
+		npm -v
+		# Should show 10.5.2
+	
+	- if not present 
+		- install node from https://nodejs.org/en
+		- Windows 	=> click the downloaded => .msi
+		- Mac 		=> click the downloaded => .pkg
+		- Linux 	=> terminal => sudo apt update
+								=> sudo apt install nodejs npm
+		
+	- if present but not the same version
+		- Windows 	=> Download the installer	
+					=> https://github.com/coreybutler/nvm-windows/releases => .msi
+					=> Choose the latest nvm-setup.exe
+					=> Run the installer as Administrator
+					=> Verify installation in terminal => nvm version
+		- Linux/macOS (curl) 	=> curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+								=> restart the terminal
+								=> nvm install 22.16.0
+								=> nvm use 22.16.0
+		- if not the same npm version
+					=> npm install -g npm@10.5.2
+					
+3. Next.js 
+	- npm run dev
+	#should run the local environment
+	
+	- if there is error => `Missing script: "dev"`
+		- run 			=> npm install next react react-dom
+		- package.json	=> add
+			"scripts": {
+				"dev": "next dev",
+				"build": "next build",
+				"start": "next start"
+			}
+
+Code implementations:
+				
+1. Use Next.js Starter Template
+	- npx create-next-app@latest
+	✔ What is your project name? marvelcomics
+	✔ Would you like to use TypeScript? No
+		- sets complex type safety disabled (no .ts/.tsx files).
+	✔ Would you like to use ESLint? Yes
+		- enables spell-checker for code
+	✔ Would you like to use Tailwind CSS? No
+		- disabled since using SCSS no need for Tailwind being a utility-first CSS framework 
+	✔ Would you like to use `src/` directory? No
+		- To keep this basic or we would need to use next.config.js
+	✔ Would you like to use App Router? No
+		- keeping the basic router for now which is Pages Router
+	✔ Would you like to Turbopack for `next dev`? No
+		- disabled since Project is small/medium-sized, Turbopack is still in development (might encounter bugs)
+	✔ Would you like to customize the default import alias? No
+		- for basics ignornig and keeping it simple for now	
+	
+2. Move inside this project folder
+	- cd marvelcomics
+	
+3. Install SCSS for styling
+	- Run => npm install sass
+		- This will include `dependencies` as `saas` in package.json
+		- Run => npm list sass
+			- To dee dependencies in terminal itself 
+4. install next:
+	- Run => npm install next react react-dom
+	
+5. 	Start Your App
+	- Run => npm run dev
+	
+6. Preview on browser
+	- http://localhost:3000
+	
+7. Additional packages:
+	Roboto font
+	- npm install @fontsource/roboto
+	
+	Rozha One
+	- npm install @fontsource/rozha-one
+	
+	npm install @apollo/client graphql
+			
+8. comicvine API:
+	- Genrated API key: 52273998fec94ff32bf5468b50e168a9ada75837
+	- postman cURL:
+		curl --location --request GET 'https://comicvine.gamespot.com/api/volumes/?api_key=APIKEY	' \
+		--header 'Accept: application/json' \
+		--header 'User-Agent: YourAppName/1.0' \
+		--header 'Content-Type: application/x-www-form-urlencoded' \
+		--data-urlencode 'api_key=YOUR_API_KEY' \
+		--data-urlencode 'format=json'
+	
+	issues with comicvine API:
+		- while fetching comicvine: https://comicvine.gamespot.com/api/volumes/
+		- when filtering with data as documented as start_year to fetch, is not working
+			- possible solution to fetch all data and filter in the
+		- when filtering with data name as spiderman comics do working
+			- a better approch would have been to get the 31 publisher id as filter is not working
+			- but as per the documentation publisher id as filter is not working.
+			- thus fetching the data named with spiderman
+		- also limit is set to 100 max, better approch to loop to get until max 8 datasets
+		- still issue persists, sometimes data is not being loaded due to error from comicvine API itself
+
+
+			
+Github installations:
+	
+	1. 	Download git
+		https://git-scm.com/downloads/win
+
+	2.	Run the installer:
+		- Check "Add Git to PATH" during installation
+		- Use default options for other steps
+
+	3. Check git version
+		git --version
+		
+	4. 	Configure Git (One-Time Setup)
+		git config --global user.name "Your Name"
+		git config --global user.email "your@email.com"
+
+	5.	Initialized Git repository from project folder in VS code terminal
+		git init
+	
+	6.	Add remote origin:
+		git remote add origin https://github.com/mahuasarkar/marvelcomics.git 
+		
+	7.	Stage and Commit Files:
+		git add .
+		git commit -m "Initial commit with Marvel website"
+		
+	8.	Push to GitHub:
+		git branch -M main
+		git push -u origin main
+
+	Alternatively use Deskyop github	
+		Download github from : https://desktop.github.com/download/			

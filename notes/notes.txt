@@ -1,0 +1,44 @@
+Brief Idea about how this project goes:
+
+1. Homepage: 
+	- Stack to be used: React(jsx), Next.js, scss
+	- based on provided figma design UI
+	
+2. Under See Marvel Heros:
+	- click on card of Marvel Hero
+	- triggers => Model
+	- Model => display => character details
+	
+3. Movie Section:
+	- From comicvine.gamespot API
+	- Stack to be used: ComicvineAPI, ACF, and GraphQL
+	- Develop list of comics with Peter Parker
+	- additional note: whose series began exclusively in 2022
+	
+4. Backend with graphQL 
+	- Stack to be used: ACF, and GraphQL
+	- Data => Add the villans: Doctor Octopus, Carnage, Chameleon, Electro, Green Goblin, Hobgoblin, Kraven the Hunter, Venom, Shocke
+	- and stored in provided srdevtest1
+
+5. Dropdown to filter the comics by villan
+	- Create a dropdown
+	- fetch from [4] 
+	- make a connection to GraphQL
+	- and filter the comics based on the selection => villan
+	
+	
+Additional notes:
+1. Assuming the movie section [3] to be the one just below the banner
+	considering it to be comics instead of movie.
+	
+2. Since its mentioned to display series exclusively in 2022 spiderman,
+	considering all the movie section to be comics
+	noted, only of Peter Parker whose series began exclusively in 2022 - at first load
+	since after looking into comicvine data, choosing 2022 on villan filter results with no daata in many inouts.
+	
+3. Thus with above 2 points the [2]
+	though with this heroes should have been only Peter Parker at first.
+	later to be as per villan filters
+	
+4. In the UI there is no dropdown UI provided
+	assuming it to be just above the Comic(Movie just under banner) section
