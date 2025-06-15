@@ -257,14 +257,21 @@ As per the assignment instructions:
    - Developed a list of comics featuring **Spider-Man (Peter Parker)** whose series began exclusively in **2022**
 
 4. **Villain Dropdown Filter**
-   - Created dropdown using **ACF** and **GraphQL**
-   - Villains added:  
+   - Implemented a dropdown UI and configured **ACF** fields in WordPress for the following villains:  
      `Doctor Octopus, Carnage, Chameleon, Electro, Green Goblin, Hobgoblin, Kraven the Hunter, Venom, Shocker`
+   - Successfully created and stored villain data via ACF.
+   - Attempted to fetch this data using **GraphQL**, but encountered access limitations:
+     - `.htaccess` and `functions.php` access is restricted.
+     - External endpoint (`domain.graphql`) returns permission errors.
+   - The frontend dropdown and supporting structure are in place.
+   - The GraphQL connection can be completed once access is granted or an alternative method is identified.
 
 5. **GraphQL Integration for Filtering**
-   - Intended to connect dropdown with GraphQL to filter comics by selected villain
+   - The dropdown was intended to dynamically filter comics based on selected villain using GraphQL.
+   - Integration is pending due to access restrictions, but the implementation is straightforward once resolved.
 
 > ✅ All core functionalities have been implemented as per the assignment  
-> ⚠️ The only pending item is the **final GraphQL filtering** connection due to ComicVine API limitations.  
+> ⚠️ The only pending item is the **final GraphQL filtering** connection due to API Authntication Access limitations.  
+
 > This is documented in the README. All other tasks are completed.
 
