@@ -62,7 +62,7 @@ const ComicGallery = () => {
 
   return (
     <div>
-
+      <button className={styles.button}>Read More</button>
       <div className={styles.comicGallerySection}>
 
         <section className={styles.comicGallery}>
