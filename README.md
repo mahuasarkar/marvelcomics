@@ -1,6 +1,9 @@
 
 # 🚀 Marvel Comics Web App
 
+### Live Demo
+👉 [View the live site](https://684ffaf9f12af9badadc2b03--silver-druid-c7c581.netlify.app/)
+
 A lightweight Next.js-based application to showcase Marvel characters and comics using the ComicVine API.
 
 ---
